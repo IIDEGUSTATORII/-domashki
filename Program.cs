@@ -83,4 +83,60 @@ int num;
             {
                 Console.WriteLine("Четных числе нет");
             }
-            
+
+//Задача 10: Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает вторую цифру этого числа.
+Console.WriteLine("Введите число: ");
+
+int n = Convert.ToInt32(Console.ReadLine());
+int amount = n.ToString().Length;
+
+if (amount < 3 || amount > 3)
+{
+    Console.WriteLine("Вы ввели не трехзначное число или оно отрицательное");
+}
+else
+{
+    int a = n/10;
+    a = a % 10;
+    Console.WriteLine(a);
+}
+
+// Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
+Console.WriteLine("Введите число: ");
+
+int n = Convert.ToInt32(Console.ReadLine());
+int amount = n.ToString().Length;
+if (amount < 3)
+{
+    Console.WriteLine("В числе нет 3-ей цифры");
+}
+else {
+    
+    if (n >= 100)
+            {
+                while (n > 999)
+                {
+                    n = n / 10;
+                }
+                n = n % 10;
+               Console.WriteLine(n);
+            }
+          
+        }
+
+// Задача 15: Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
+Console.WriteLine("Введите число дня недели: ");
+            int n = Convert.ToInt32(Console.ReadLine());
+
+if (n < 1 || n > 7) {
+    Console.WriteLine("Вы ввели неверное число");
+    }
+    else { 
+        if (n > 5) {
+            Console.WriteLine("Выходной");
+        }
+        else {
+            Console.WriteLine("Будний день");
+        }
+
+    }
