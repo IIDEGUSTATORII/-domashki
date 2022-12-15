@@ -1,5 +1,5 @@
 ﻿ 
-  // Задача 2: Напишите программу, которая на вход принимает два числа и выдаёт, какое число большее, а какое меньшее.
+  /* // Задача 2: Напишите программу, которая на вход принимает два числа и выдаёт, какое число большее, а какое меньшее.
             Console.WriteLine("Введите первое число: ");
             int num1 = Convert.ToInt32(Console.ReadLine());
 
@@ -140,3 +140,45 @@ if (n < 1 || n > 7) {
         }
 
     }
+
+//Задача 19 Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
+Console.WriteLine("Введите число: ");
+string n = Console.ReadLine();
+int a = n.Length;
+
+if (a == 5)
+{
+    if (n[0] == n[4] && n[1] == n[3])
+    {
+        Console.WriteLine($"{n} - Палиндром");
+    }
+    else
+    {
+        Console.WriteLine($"{n} - Не палнидром");
+    }
+}
+else
+{
+    Console.WriteLine($" {n} - Не является пятизначным");
+}
+*/
+// Задача 21 Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
+Console.WriteLine("Введите X первой точки: ");
+int x1 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите Y первой точки: ");
+int y1 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите Z первой точки: ");
+int z1 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите X второй точки: ");
+int x2 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите Y второй точки: ");
+int y2 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите Z второй точки: ");
+int z2 = Convert.ToInt32(Console.ReadLine());
+
+int A = x2 - x1;
+int B = y2 - y1;
+int C = z1 - z2;
+
+double length = Math.Sqrt(A * A + B * B + C * C);
+Console.WriteLine($"Длинна отрезка {length}");
