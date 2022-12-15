@@ -1,5 +1,5 @@
 ﻿ 
-// Задача 2: Напишите программу, которая на вход принимает два числа и выдаёт, какое число большее, а какое меньшее.
+/*// Задача 2: Напишите программу, которая на вход принимает два числа и выдаёт, какое число большее, а какое меньшее.
             Console.WriteLine("Введите первое число: ");
             int num1 = Convert.ToInt32(Console.ReadLine());
 
@@ -297,7 +297,7 @@ void PrintArray(int[] array)
     }
     Console.WriteLine("]");
 }
- //Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
+ *///Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
 Console.WriteLine("Введите размер массива");
 int size = Convert.ToInt32(Console.ReadLine());
 double[] n = new double[size];
@@ -325,16 +325,16 @@ void FillArrayRandomNumbers(double[] array)
 {
     for (int i = 0; i < array.Length; i++)
     {
-        array[i] = new Random().Next(1, 1000)+ new Random().NextDouble();
+        array[i] = new Random().Next(-999, 1000)+ new Random().NextDouble();
     }
 }
 
 
 void PrintArray(double[] array)
-{
+{ Console.Write("[ ");
     for (int i = 0; i < array.Length; i++)
     {
         Console.Write(array[i] + " ");
     }
-    Console.WriteLine();
+    Console.WriteLine("]");
 }
