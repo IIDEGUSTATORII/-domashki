@@ -1,5 +1,5 @@
 ﻿ 
-  // Задача 2: Напишите программу, которая на вход принимает два числа и выдаёт, какое число большее, а какое меньшее.
+// Задача 2: Напишите программу, которая на вход принимает два числа и выдаёт, какое число большее, а какое меньшее.
             Console.WriteLine("Введите первое число: ");
             int num1 = Convert.ToInt32(Console.ReadLine());
 
@@ -232,4 +232,109 @@ Console.Write("]");
 int Method (int a)
 {
     return n[a];
+}
+
+//Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами. Напишите программу, которая покажет количество чётных чисел в массиве.
+Console.WriteLine("Введите размер массива");
+int size = Convert.ToInt32(Console.ReadLine());
+int[] n = new int[size];
+int a = 0;
+FillArrayRandomNumbers(n);
+PrintArray(n);
+
+
+for (int i = 0; i < n.Length; i++)
+{
+    if (n[i] % 2 == 0)
+    a++;
+}
+
+
+Console.WriteLine($"количество чётных чисел -> {a} ");
+
+void FillArrayRandomNumbers(int[] array)
+{
+    for(int i = 0; i < array.Length; i++)
+    {
+        array[i] = new Random().Next(100,1000);
+    }
+}
+void PrintArray(int[] array)
+{  Console.Write("[ ");
+    for(int i = 0; i < array.Length; i++)
+    {
+        Console.Write(array[i] + " ");
+    }
+    Console.WriteLine("]");
+}
+//Задача 36: Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
+Console.WriteLine("Введите размер массива");
+int size = Convert.ToInt32(Console.ReadLine());
+int[] n = new int[size];
+int s = 0;
+FillArrayRandomNumbers(n);
+PrintArray(n);
+
+for (int i = 1; i < n.Length; i += 2)
+{
+    s += n[i];
+}
+Console.Write("Сумма элементов, стоящих на нечётных позициях:"+s);
+
+void FillArrayRandomNumbers(int[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        array[i] = new Random().Next(-50, 51);
+    }
+}
+
+void PrintArray(int[] array)
+{ Console.Write("[ ");
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write(array[i] + " ");
+    }
+    Console.WriteLine("]");
+}
+ //Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
+Console.WriteLine("Введите размер массива");
+int size = Convert.ToInt32(Console.ReadLine());
+double[] n = new double[size];
+FillArrayRandomNumbers(n);
+PrintArray(n);
+
+double max = n[0];
+double min = n[0];
+
+for (int i = 0; i < n.Length; i++)
+{
+    if (n[i] > max)
+    {
+        max = n[i];
+    }
+    else if (n[i] < min)
+    {
+        min = n[i];
+    }
+}
+
+Console.WriteLine($"Разница между максимальным и минимальным числами: {max-min}");
+
+void FillArrayRandomNumbers(double[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        array[i] = new Random().Next(1, 1000)+ new Random().NextDouble();
+    }
+}
+
+
+void PrintArray(double[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write(array[i] + " ");
+    }
+    Console.WriteLine();
 }
