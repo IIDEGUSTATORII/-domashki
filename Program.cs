@@ -161,7 +161,7 @@ else
 {
     Console.WriteLine($" {n} - Не является пятизначным");
 }
-*/
+
 // Задача 21 Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
 Console.WriteLine("Введите X первой точки: ");
 int x1 = Convert.ToInt32(Console.ReadLine());
@@ -182,3 +182,12 @@ int C = z1 - z2;
 
 double length = Math.Sqrt(A * A + B * B + C * C);
 Console.WriteLine($"Длинна отрезка {length}");
+*/
+//Задача 23 Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
+Console.WriteLine("Введите количество кубов");
+int n = Convert.ToInt32(Console.ReadLine());
+
+for (int i = 1; i <= n; i++)
+{ 
+    Console.Write($"{i*i*i} ");
+}
