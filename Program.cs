@@ -1,4 +1,4 @@
-﻿ // Задача 2: Напишите программу, которая на вход принимает два числа и выдаёт, какое число большее, а какое меньшее.
+﻿// Задача 2: Напишите программу, которая на вход принимает два числа и выдаёт, какое число большее, а какое меньшее.
             Console.WriteLine("Введите первое число: ");
             int num1 = Convert.ToInt32(Console.ReadLine());
 
@@ -336,4 +336,88 @@ void PrintArray(double[] array)
         Console.Write(array[i] + " ");
     }
     Console.WriteLine("]");
+} 
+//Задача 41: Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
+Console.Write("Введите числа (через пробел)");
+int[] n = StringToNum(Console.ReadLine());
+PrintArray(n);
+int s = 0;
+for (int i = 0; i < n.Length; i++)
+{
+    if (n[i] > 0)
+    {
+        s++;
+    }
 }
+Console.WriteLine();
+Console.WriteLine($"Чисел больше 0: {s}");
+int[] StringToNum(string a)
+{
+    int count = 1;
+    for (int i = 0; i < a.Length; i++)
+    {
+        if (a[i] == ' ')
+        {
+            count++;
+        }
+    }
+
+    int[] n = new int [count];
+    int index = 0;
+
+    for (int i = 0; i < a.Length; i++)
+    {
+        string temp = "";
+
+        while (a [i] != ' ')
+        {
+        if(i != a.Length - 1)
+        {
+            temp += a [i].ToString();
+            i++;
+        }
+        else
+        {
+            temp += a [i].ToString();
+            break;
+        }
+        }
+        n[index] = Convert.ToInt32(temp);
+        index++;
+    }
+    return n;
+}
+
+void PrintArray(int[] array)
+{
+    Console.Write("[ ");
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write(array[i] + " ");
+    }
+    Console.Write("]");
+}
+//Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых, заданных уравнениями y = k1 * x + b1, y = k2 * x + b2
+Console.Write("Введите k1: ");
+double k1 = Convert.ToDouble(Console.ReadLine());
+Console.Write("Введите b1: ");
+double b1 = Convert.ToDouble(Console.ReadLine());
+Console.Write("Введите k2: ");
+double k2 = Convert.ToDouble(Console.ReadLine());
+Console.Write("Введите b2: ");
+double b2 = Convert.ToDouble(Console.ReadLine());
+ 
+if ((k1 == k2) && (b1 == b2)) 
+{
+Console.WriteLine("Прямые совпадают");
+}
+else 
+if (k1 == k2)
+{
+Console.WriteLine("Прямые параллельны");
+}
+else
+{
+double x = (b2- b1) / (k1 - k2);
+double y = k1 * x + b1;
+Console.WriteLine($"Прямые пересекаются в точке: ({x};{y})");}
