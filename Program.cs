@@ -1,4 +1,4 @@
-﻿// Задача 2: Напишите программу, которая на вход принимает два числа и выдаёт, какое число большее, а какое меньшее.
+﻿/*// Задача 2: Напишите программу, которая на вход принимает два числа и выдаёт, какое число большее, а какое меньшее.
             Console.WriteLine("Введите первое число: ");
             int num1 = Convert.ToInt32(Console.ReadLine());
 
@@ -396,7 +396,7 @@ void PrintArray(int[] array)
         Console.Write(array[i] + " ");
     }
     Console.Write("]");
-}
+} */
 //Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых, заданных уравнениями y = k1 * x + b1, y = k2 * x + b2
 Console.Write("Введите k1: ");
 double k1 = Convert.ToDouble(Console.ReadLine());
@@ -409,15 +409,15 @@ double b2 = Convert.ToDouble(Console.ReadLine());
  
 if ((k1 == k2) && (b1 == b2)) 
 {
-Console.WriteLine("Прямые совпадают");
+ Console.WriteLine("Прямые совпадают");
 }
 else 
-if (k1 == k2)
-{
-Console.WriteLine("Прямые параллельны");
-}
-else
-{
-double x = (b2- b1) / (k1 - k2);
-double y = k1 * x + b1;
-Console.WriteLine($"Прямые пересекаются в точке: ({x};{y})");}
+     {if (k1 == k2)
+     {
+      Console.WriteLine("Прямые параллельны");
+     }
+     else
+     {
+     double x = (b2- b1) / (k1 - k2);
+     double y = k1 * x + b1;
+     Console.WriteLine($"Прямые пересекаются в точке: ({x};{y})");}}
