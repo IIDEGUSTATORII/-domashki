@@ -1,4 +1,5 @@
-﻿// Задача 2: Напишите программу, которая на вход принимает два числа и выдаёт, какое число большее, а какое меньшее.
+﻿
+// Задача 2: Напишите программу, которая на вход принимает два числа и выдаёт, какое число большее, а какое меньшее.
             Console.WriteLine("Введите первое число: ");
             int num1 = Convert.ToInt32(Console.ReadLine());
 
@@ -421,3 +422,138 @@ else
      double x = (b2- b1) / (k1 - k2);
      double y = k1 * x + b1;
      Console.WriteLine($"Прямые пересекаются в точке: ({x};{y})");}}
+     
+     //Задача 47. Задайте двумерный массив размером m×n, заполненный случайными вещественными числами. 
+int r = ReadInt("Введите кол-во строк: ");
+int c = ReadInt("Введите кол-во столбцов: ");
+double[,] n = new double[r, c];
+FillArray2D(n);
+PrintArray2D(n);
+
+void FillArray2D(double[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            array[i, j] = new Random().Next(-99, 99) / 10.0;
+        }
+    }
+}
+void PrintArray2D(double[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i, j] + " ");
+        }
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+}
+
+int ReadInt(string s)
+{
+    Console.Write(s);
+    return Convert.ToInt32(Console.ReadLine());
+}
+
+//Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и возвращает значение этого элемента или же указание, что такого элемента нет.
+int r = ReadInt("Введите индекс строки: ");
+int c = ReadInt("Введите индекс столбца: ");
+int[,] n = new int[6, 8];
+FillArray2D(n);
+PrintArray2D(n);
+
+if (r < n.GetLength(0) && c < n.GetLength(1)) Console.WriteLine(n[r, c]);
+else Console.WriteLine($"{r} {c}  такого числа в массиве нет");
+
+void FillArray2D(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            array[i, j] = new Random().Next(1, 10);
+        }
+    }
+}
+
+void PrintArray2D(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i, j] + " ");
+        }
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+}
+
+int ReadInt(string s)
+{
+    Console.Write(s);
+    return Convert.ToInt32(Console.ReadLine());
+}
+
+//Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
+int r = ReadInt("Введите кол-во строк: ");
+int c = ReadInt("Введите колв-во стобцов: ");
+int[,] n = new int[r, c];
+FillArray2D(n);
+PrintArray2D(n);
+
+double[] a = new double[n.GetLength(1)];
+
+for (int i = 0; i < n.GetLength(1); i++)
+{
+    double result = 0.0;
+    for (int j = 0; j < n.GetLength(0); j++)
+    {
+        result += n[j, i];
+    }
+    a[i] = result / n.GetLength(0);
+}
+PrintArray(a);
+
+void FillArray2D(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            array[i, j] = new Random().Next(1, 10);
+        }
+    }
+}
+
+void PrintArray2D(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i, j] + " ");
+        }
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+}
+
+void PrintArray(double[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write(array[i] + " ");
+    }
+    Console.WriteLine();
+}
+
+int ReadInt(string message)
+{
+    Console.Write(message);
+    return Convert.ToInt32(Console.ReadLine());
+}
