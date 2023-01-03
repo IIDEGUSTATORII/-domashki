@@ -834,3 +834,76 @@ void WriteArray (int[,] array)
     Console.WriteLine();
   }
 }
+
+//Задача 64: Задайте значение N. Напишите программу, которая выведет все натуральные числа в промежутке от N до 1.
+Console.Write("Введите число: ");
+int n= Convert.ToInt32(Console.ReadLine());
+int c = 1;
+p(n, c);
+
+
+void p(int a, int c)
+{
+    if (c > a)
+    {
+        return;
+    }
+    else
+    {
+        p(a, c + 1);
+        Console.Write(c + " ");
+    }
+}
+
+//Задача 66: Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.
+Console.Write("Введите 1 число: ");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите 2 число: ");
+int n = Convert.ToInt32(Console.ReadLine());
+Sum(m, n);
+
+void Sum(int m, int n)
+{
+    Console.Write(SumMN(m - 1, n));
+}
+
+int SumMN(int m, int n)
+{
+    int r = m;
+    if (m == n)
+        return 0;
+    else
+    {
+        m++;
+        r = m + SumMN(m, n);
+        return r;
+    }
+}
+
+//Задача 68: Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
+Console.Write("Введите M: ");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите N: ");
+int n = Convert.ToInt32(Console.ReadLine());
+akk(m,n);
+
+void akk(int m, int n)
+{
+    Console.Write(ak(m, n)); 
+}
+
+int ak(int m, int n)
+{
+    if (m == 0)
+    {
+        return n + 1;
+    }
+    else if (n == 0 && m > 0)
+    {
+        return ak(m - 1, 1);
+    }
+    else
+    {
+        return (ak(m - 1, ak(m, n - 1)));
+    }
+}
